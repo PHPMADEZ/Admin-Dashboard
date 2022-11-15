@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
             // Delete user
             $delete = $admin->deleteUser($uid);
             // If user is deleted successfully then redirect to admin page
-            header("location: /views/user.php?error=none");
+            header("location: /pages/user.php?error=none");
             exit();
         }
         else if ($selected == "geninv")
@@ -33,14 +33,14 @@ if(isset($_POST['submit'])){
             $utility = new utilityCont($uid);
             $gen_invite = $utility->generateInvite();
             // If invite is generated successfully then redirect to admin page
-            header("location: /views/user.php?error=notenoughtokens");
+            header("location: /pages/user.php?error=notenoughtokens");
             exit();
         }
         elseif ( $selected == "gentoken") {
             $uid = $_GET['id'];
             $admin = new AdminCont();
             $gen_token = $admin->addToken($uid);
-            header("location: /views/user.php?error=none");
+            header("location: /pages/user.php?error=none");
             exit();
 
         }
@@ -62,7 +62,7 @@ if (isset($_POST['addWeek']))
     $add_week = $admin->updateWeek();
     $utility->insertNotification($uid, "added 1 week to all subs");
     // If week is added successfully then redirect to admin page
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
     exit();
 }
 /*
@@ -79,7 +79,7 @@ if (isset($_POST['addDay'])) {
     $add_day = $admin->updateDay();
     $utility->insertNotification($uid, "added 1 day to all subs");
     // If day is added successfully then redirect to admin page
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
     exit();
 }
 /*
@@ -95,7 +95,7 @@ if (isset($_POST['randomize'])) {
     $randomize = $utility->randomizeUsers();
     $utility->makeNotification($uid, "generated random invites at");
     // If users are randomized successfully then redirect to admin page
-    header("location: /pages/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
     exit();
 }
 /*
@@ -115,7 +115,7 @@ if (isset($_POST['aCreate']))
     //signup user
     $signup = $signup->setUserAdmin($uid, $pwd, $email);
     //redirect to main page if signup is successful
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # generates an invite
@@ -134,7 +134,7 @@ if (isset($_POST['ugeninv']))
         
     }
     // If invite is generated successfully then redirect to admin page
-    header("location: /views/invites.php?error=notenoughtokens");
+    header("location: /pages/invites.php?error=notenoughtokens");
     exit();
 }
 /*
@@ -148,7 +148,7 @@ if (isset($_POST['webud']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $webud = $utility->updateWebsiteStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # Make website status updating
@@ -160,7 +160,7 @@ if (isset($_POST['webup']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $webup = $utility->updateWebsiteStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # Make website status detected
@@ -172,7 +172,7 @@ if (isset($_POST['webd']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $webd = $utility->updateWebsiteStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # make loader status undetected
@@ -184,7 +184,7 @@ if (isset($_POST['loadud']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $loadud = $utility->updateLoaderStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # make loader status updating
@@ -196,7 +196,7 @@ if (isset($_POST['loadup']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $loadup = $utility->updateLoaderStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # make loader status detected
@@ -208,7 +208,7 @@ if (isset($_POST['loadd']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $loadd = $utility->updateLoaderStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # make cheat status undetected
@@ -220,7 +220,7 @@ if (isset($_POST['cheatud']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $cheatud = $utility->updateCheatStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # make cheat status updating
@@ -232,7 +232,7 @@ if (isset($_POST['cheatup']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $cheatup = $utility->updateCheatStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 /*
 # make cheat status detected
@@ -244,7 +244,7 @@ if (isset($_POST['cheatd']))
     // Instance of utility class
     $utility = new utilityCont($uid);
     $cheatd = $utility->updateCheatStatus($status);
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 
 if (isset($_POST['aUser']))
@@ -256,7 +256,7 @@ if (isset($_POST['aUser']))
     $admin = new AdminCont();
     $admin->addAsAdmin($uid, $pwd, $email);
 
-    header("location: /views/admin.php?error=none");
+    header("location: /pages/dashboard.php?error=none");
 }
 
 //insert reason
@@ -266,7 +266,7 @@ if (isset($_POST['insertReason']))
     $reason = $_POST['rr'];
     $utility = new utilityCont($user);
     $utility->insertReason($reason, $user);
-    header("location: /views/settings.php?error=none");
+    header("location: /pages/settings.php?error=none");
 }
 
 

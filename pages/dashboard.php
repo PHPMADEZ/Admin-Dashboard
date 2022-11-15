@@ -156,13 +156,13 @@
 
       <form action="/app/incl/admin.inc.php" method="POST">
         <div class="mb-3">
-          <input type="username" name="useruid" class="form-control" placeholder="Username" aria-label="username">
+          <input type="username" name="uid" class="form-control" placeholder="Username" aria-label="username">
         </div>
         <div class="mb-3">
-          <input type="email" class="form-control" placeholder="email" aria-label="email">
+          <input type="email" name="email" class="form-control" placeholder="email" aria-label="email">
         </div>
         <div class="mb-3">
-          <input type="password" class="form-control" placeholder="password" aria-label="password">
+          <input type="pwd" name="pwd" class="form-control" placeholder="password" aria-label="password">
         </div>
 
        
