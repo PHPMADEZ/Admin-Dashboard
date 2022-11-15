@@ -27,7 +27,11 @@ Features:
 -----------------------------------------------------------------
 
 Project was done with a focus on Materialzed bootstrap framework, to furthur dive in custom made bootstrap frameworks.
-PHP OOP custom file system
+- PHP OOP Custom File System
+
 ```
 Class --> Controller --> Includes
+```
+```
+CSS/SCSS/JS -> assets
 ```
