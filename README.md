@@ -25,3 +25,9 @@ Features:
 - Logging SUDO actions
 
 -----------------------------------------------------------------
+
+Project was done with a focus on Materialzed bootstrap framework, to furthur dive in custom made bootstrap frameworks.
+PHP OOP custom file system
+```
+Class --> Controller --> Includes
+```
